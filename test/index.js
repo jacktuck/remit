@@ -150,7 +150,6 @@ describe('Remit', function() {
 
 			amqp.connect('amqp://localhost')
 				.then(connection => {
-
 					return connection.createChannel()
 						.delay(200)
 						.tap(channel => channel.get(`greeting:emission:${remit._service_name}:${remit._listener_count}`))
